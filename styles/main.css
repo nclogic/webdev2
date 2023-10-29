@@ -1,1 +1,67 @@
+/* Defining colors that will be used throughout the site "Think - Color Scheme"  . This makes for easier maintenance and color choosing */
+:root {
+  --body-background-color: #cadffa;
+  --header-footer-background-color: #8dc5fa;
+  --header-footer-title-text-color: #03396b;
+  --nav-menu-text-color: #0442a0;
+  
+}
+/* Reset margin and padding for consistency. This will ensure that there are no margins and padding around the borders of the body */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  background-color: var(--body-background-color) ;
+}
+/* Style for the header section */
+header {
+  background-color: var(--header-footer-background-color);
+  color: var(--header-footer-title-text-color);
+  padding: 10px; /* This puts 10 pixels of padding on the inside edge of the header container so the contents are not against the edges.*/
+  display: flex; /* Options here could be flex, block(default) and grid. flex was chosen because in this layout , all of the contents sit in one row. flex is a good choice as it allows easy alignment of the elements without a lot of code*/
+  justify-content: space-between; /* This is for horizontal alignment (because this is laid out as a row) Options include; space-between, space-around and space-evenly. */
+  align-items: center; /* This is for vertical alignment (because this is a row) Opitons include; center, top and bottom*/
+}
+
+/* Style for the navigation links in the header */
+nav ul {
+  list-style: none; /* This propert removes any bullets (this particular list is un-ordered) and removes numbers from an OL (ordered list)*/
+  display: flex; 
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none; /* This property removes the underlines from the link items. */
+  color: var(--nav-menu-text-color);
+}
+
+/* Style for the main content section */
+main {
+  padding: 20px;
+}
+
+/* Responsive design using media queries */
+@media (max-width: 768px) {
+  /* For screens smaller than 768px, adjust the header and navigation layout */
+  /* on small screens, it is preferred to have items in a column rather than a row because of small screen width. It is done by changing properties such as adding a flex-direction property. row is the default direction. */
+  header {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  nav ul {
+      margin-top: 10px;
+      flex-direction: column;
+  }
+
+  nav ul li {
+      margin-right: 0;
+      margin-bottom: 10px;
+  }
+}
