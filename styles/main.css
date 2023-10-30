@@ -54,6 +54,12 @@ nav a {
 main {
   padding: 20px 40px;
 }
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
 
 .title-section {
 margin-top: 10px;
