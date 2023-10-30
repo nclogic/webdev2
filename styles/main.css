@@ -1,10 +1,11 @@
 /* Defining colors that will be used throughout the site "Think - Color Scheme"  . This makes for easier maintenance and color choosing */
 :root {
   --body-background-color: #cadffa;
-  --header-footer-background-color: #8dc5fa;
+  --header-footer-background-color: #1fb9f9;
   --header-footer-title-text-color: #03396b;
   --nav-menu-text-color: #0442a0;
-  
+  --sand-color: #f4dcb0;
+  --green-text: #096112;
 }
 /* Reset margin and padding for consistency. This will ensure that there are no margins and padding around the borders of the body */
 * {
@@ -17,13 +18,21 @@ body {
   background-color: var(--body-background-color) ;
 }
 /* Style for the header section */
-header {
+header,
+footer {
+  font-size: 1.8em;
   background-color: var(--header-footer-background-color);
   color: var(--header-footer-title-text-color);
   padding: 10px; /* This puts 10 pixels of padding on the inside edge of the header container so the contents are not against the edges.*/
   display: flex; /* Options here could be flex, block(default) and grid. flex was chosen because in this layout , all of the contents sit in one row. flex is a good choice as it allows easy alignment of the elements without a lot of code*/
   justify-content: space-between; /* This is for horizontal alignment (because this is laid out as a row) Options include; space-between, space-around and space-evenly. */
   align-items: center; /* This is for vertical alignment (because this is a row) Opitons include; center, top and bottom*/
+}
+h1 {
+  flex: 1; /* Allow the h1 element to grow and occupy the available space */
+  text-align: center; /* Center-align the text */
+  white-space: wrap; /* Prevent the text from wrapping */
+
 }
 
 /* Style for the navigation links in the header */
@@ -43,7 +52,41 @@ nav a {
 
 /* Style for the main content section */
 main {
-  padding: 20px;
+  padding: 20px 40px;
+}
+
+.title-section {
+margin-top: 10px;
+display: flex;
+flex-direction: row;
+align-items: center;
+}
+.section-title {
+  font-size: 1.65em;
+  background-color: var(--sand-color);
+  color: var(--green-text);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--green-text); 
+  border-radius: 5px;
+  padding: 0 10px; /* Add padding for spacing between text and border */
+}
+.border-left, /* these elemnts are just for ease in centering the 'Lets get started' text container*/
+.border-right {
+  flex: 1; /* Expand to fill available space */
+}
+#prelude { /* Styling the prelude text*/
+  font-size: 1.5em;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+#tsunami { /* Styling for the image to make fill the available area and make it responsive */
+  width: 100%;
+  height: 100%;
+  margin-top: 20px;
 }
 
 /* Responsive design using media queries */
