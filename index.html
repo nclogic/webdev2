@@ -7,7 +7,7 @@
   <meta name="description" content="This webdev2 website aims to provide basic to intermediate info for the beginner web developer to help them understand the HTML/CSS syntax and fundamentals." /> <!-- This provides information to search engines as to what the site is about -->
   <link rel="icon" href="logo.png" type="image/xicon" /> <!-- This is the logo/icon that shows up on the browser tab next to the title when visiting the page-->
   <link rel="stylesheet" type="text/css" href="/webdev2/styles/main.css" /> <!-- This is needed if you want an external stylesheet - there needs to be a link for all additional css files that you use-->
-  <!-- <script src="/scripts/main.js" defer></script>--> <!-- This is needed to if you want an external JavaScript, there needs to be a link for all additional JavaScript files that you use -->
+  <script src="/webdev2/scripts/main.js" defer></script> <!-- This is needed to if you want an external JavaScript, there needs to be a link for all additional JavaScript files that you use -->
   <title>HTML/CSS Reference Site #2</title> <!-- This is the "Site" Title. It is different than the "Page" title. This title shows up on the browser tab and as the suggested text when bookmarking a page -->
 </head> <!-- The end of the head section -->
   <body> <!-- The beginning of the body section -->
@@ -35,17 +35,39 @@
         As you embark on this adventure, you'll discover that each project naturally introduces new concepts and challenges. The road to more intricate and breathtaking designs starts with the confidence gained from mastering the essentials.
       </p>
       <p>
-        In the pages that follow, we'll explore a wide array of topics, from advanced CSS techniques to dynamic JavaScript interactivity. So, let's dive in and create web experiences that leave a lasting impression.
+        In the pages that follow, we'll explore a wide array of topics, from basic HTML/CSS techniques to dynamic JavaScript interactivity. So, let's dive in and create web experiences that leave a lasting impression.
       </p>
+      <img id="tsunami" src="/images/backgrounds/tidalwave.jpg" alt="An image of a tidal wave with the text 'Prepare for a Tsunami of knowledge'">
     </section>
-    <img id="tsunami" src="/webdev2/images/tidalwave.jpg" alt="An image of a tidal wave with the text 'Prepare for a Tsunami of knowledge'">
+    <section id="lesson-one">
+      <h2>Lesson #1 the basics</h2>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit ipsa, nesciunt similique sapiente distinctio ut in quod cumque vero porro facere magni modi inventore soluta animi praesentium. Quasi, nulla quidem!</p>
+    </section>
+    <section id="lesson-two">
+      <h2>Lesson #2 Let's start making a page</h2>
+      <img src="/images/backgrounds/under-construction.jpg" alt="under construction image">
+    </section>
+    <section id="lesson-three">
+      <h2>Lesson #3 Comming Soon!!!</h2>
+      <img src="/images/backgrounds/under-construction.jpg" alt="under construction image">
+    </section>
+    <section id="lesson-four">
+      <h2>Lesson #4 Comming Soon!!!</h2>
+      <img src="/images/backgrounds/under-construction.jpg" alt="under construction image">
+    </section>
+    <section id="lesson-five">
+      <h2>Lesson #5 Comming Soon!!!</h2>
+      <img src="/images/backgrounds/under-construction.jpg" alt="under construction image">
+    </section>
     <div class="title-section">
-      <div class="border-left"></div>    
-      <div class="section-title"> 
+      <div class="border-left clickable-element" id="back-link">Back</div>
+      <div class="spacer"></div>    
+      <div class="section-title clickable-element" id="first-section-title"> 
         <h2>Let's get started</h2>        
       </div>
-      <div class="border-right"></div>
-    </div>  
+      <div class="spacer"></div>
+      <div class="border-right clickable-element" id="next-link">Next</div>
+    </div>
   </main>
 
   <aside> <!-- Sidebar content goes here it could be additional content or even an ads space -->
