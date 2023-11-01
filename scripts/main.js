@@ -43,6 +43,9 @@ document.addEventListener("DOMContentLoaded", function () {
     currentLesson ++;
     lessons[currentLesson].style.display = "block";
     updateButtonVisibility();
+
+    // Scroll to the top of the displayed lesson
+    lessons[currentLesson].scrollIntoView({ behavior: "smooth" });
   });
 
   backLink.addEventListener("click", function () {
@@ -57,6 +60,9 @@ document.addEventListener("DOMContentLoaded", function () {
       prelude.style.display = "block";
       
       updateButtonVisibility();
+
+      // Scroll to the top of the displayed lesson
+    lessons[currentLesson].scrollIntoView({ behavior: "smooth" });
     }
   });
 
@@ -66,10 +72,12 @@ document.addEventListener("DOMContentLoaded", function () {
       currentLesson++;
       lessons[currentLesson].style.display = "block";
       updateButtonVisibility();
+
+      // Scroll to the top of the displayed lesson
+    lessons[currentLesson].scrollIntoView({ behavior: "smooth" });
     }
   });
 
   // Initially show "Back" to go back to the initial display
   updateButtonVisibility();
 });
-
