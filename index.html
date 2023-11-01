@@ -7,6 +7,9 @@
   <meta name="description" content="This webdev2 website aims to provide basic to intermediate info for the beginner web developer to help them understand the HTML/CSS syntax and fundamentals." /> <!-- This provides information to search engines as to what the site is about -->
   <link rel="icon" href="logo.png" type="image/xicon" /> <!-- This is the logo/icon that shows up on the browser tab next to the title when visiting the page-->
   <link rel="stylesheet" type="text/css" href="/webdev2/styles/main.css" /> <!-- This is needed if you want an external stylesheet - there needs to be a link for all additional css files that you use-->
+  <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- These next three links are for specifying the main font to be used on the site -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&family=Roboto:wght@400;500;900&display=swap" rel="stylesheet">
   <script src="/webdev2/scripts/main.js" defer></script> <!-- This is needed to if you want an external JavaScript, there needs to be a link for all additional JavaScript files that you use -->
   <title>HTML/CSS Reference Site #2</title> <!-- This is the "Site" Title. It is different than the "Page" title. This title shows up on the browser tab and as the suggested text when bookmarking a page -->
 </head> <!-- The end of the head section -->
@@ -44,19 +47,33 @@
       <div class="lesson-content">
         <p>When delving into web design, it's essential to understand the fundamental concepts that underpin successful websites. Here, we'll explore the core principles you need to know.</p>
     
-        <ul class="basic-concepts-list clickable-element"> <!-- This list is for jumping to the content shown -->
-          <li><a href="#html-structure-jump">HTML Structure</a></li>
-          <li><a href="#doctype-declaration-jump">Doctype Declaration</a></li>
-          <li><a href="#viewport-meta-tag-jump">Viewport Meta Tag</a></li>
-          <li><a href="#css-reset-jump">CSS Reset</a></li>
-          <li><a href="#layout-jump">Layout (Grid System)</a></li>
-          <li><a href="#typography-jump">Typography</a></li>
-          <li><a href="#colors-jump">Colors</a></li>
-          <li><a href="#images-jump">Images</a></li>
-          <li><a href="#navigation-jump">Navigation</a></li>
-          <li><a href="#head-foot-jump">Headers and Footers</a></li>
-          <li><a href="commenting-code-jump"></a>Commenting Code</li>
-        </ul>
+        <section class="basic-concepts-list clickable-element"> <!-- This section is for internal links to quickly jump to a specific topic in the lesson -->
+          <h3>Links to specific topics</h3>
+          <div  id="jump-links-container"> <!-- This is the main container to hold the links -->
+            <div class="column">
+              <ul> <!-- This list is for jumping to the content shown -->
+                <li><a href="#html-structure-jump">HTML Structure</a></li>
+                <li><a href="#doctype-declaration-jump">Doctype Declaration</a></li>
+                <li><a href="#viewport-meta-tag-jump">Viewport Meta Tag</a></li>
+                <li><a href="#links-anchors-jump">Links and Anchors</a></li>
+                <li><a href="#lists-jump">Lists (Ordered and Unordered)</a></li>
+                <li><a href="#images-media-jump">Images and Media</a></li>
+                <li><a href="#tables-forms-jump">Tables and Forms</a></li>
+              </ul>
+            </div>
+            <div class="column">
+              <ul>                
+                <li><a href="#navigation-jump">Navigation</a></li>
+                <li><a href="#css-reset-jump">CSS Reset</a></li>
+                <li><a href="#layout-jump">Layout (Grid System)</a></li>
+                <li><a href="#typography-jump">Typography</a></li>
+                <li><a href="#colors-jump">Colors</a></li>
+                <li><a href="#head-foot-jump">Headers and Footers</a></li>
+                <li><a href="commenting-code-jump">Commenting Code</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
     
         <p>These are the building blocks of web design, and understanding them will pave the way for creating effective and visually appealing websites.</p>
     
@@ -65,82 +82,269 @@
         
         <section id="html-structure-jump">
           <h3>HTML Structure</h3>
-          <p>HTML, which stands for HyperText Markup Language, is the foundation of web pages. It uses various tags to structure and organize content. Understanding the basics of HTML structure is crucial for web design.</p>
+          <p>HTML, which stands for HyperText Markup Language, is the foundation of web pages. It uses various tags to structure and organize content.This includes the &lt;html&gt;, <code>&lt;head&gt;</code>, and <code>&lt;body&gt;</code> tags. The <code>&lt;head&gt;</code> tag typically contains meta information about the document, such as its title and link to CSS files. The <code>&lt;body&gt;</code> tag contains the content of the document.</p>
+          <p>Understanding the basics of HTML structure is crucial for web design.</p>
+          <h4>Heading Tags (Not actual size, just sized to display sizes relative to each other.)</h4>
           <ul>
-            <li>
-              <h4>Heading Tags (Not actual size, just sized to display sizes relative to each other.)</h4>
-              <ul>
-                <li><code>&lt;h1&gt;</code><span id="first-level">This is a 1st level heading</span><code>&lt;/h1&gt;</code></li>
-                <li><code>&lt;h2&gt;</code><span id="second-level">This is a 2nd level heading</span><code>&lt;/h2&gt;</code></li>
-                <li><code>&lt;h3&gt;</code><span id="third-level">This is a 3rd level heading</span><code>&lt;/h3&gt;</code></li>
-                <li><code>&lt;h4&gt;</code><span id="fourth-level">This is a 4th level heading</span><code>&lt;/h4&gt;</code></li>
-                <li><code>&lt;h5&gt;</code><span id="fifth-level">This is a 5th level heading</span><code>&lt;/h5&gt;</code></li>
-                <li><code>&lt;h6&gt;</code><span id="sixth-level">This is a 6th level heading</span><code>&lt;/h6&gt;</code></li>
-              </ul>
-            </li>
-            <li><h4>Links and Anchors</h4></li>
-            <li><h4>Lists (Ordered and Unordered)</h4></li>
-            <li><h4>Images and Media</h4></li>
-            <li><h4>Tables and Forms</h4></li>
-            <li><h4>Navigation</h4></li>
-            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">Here you will find a full list of available tags (Mozilla.org)</a></li>
+            <li><code>&lt;h1&gt;</code><span id="first-level">This is a 1st level heading</span><code>&lt;/h1&gt;</code></li>
+            <li><code>&lt;h2&gt;</code><span id="second-level">This is a 2nd level heading</span><code>&lt;/h2&gt;</code></li>
+            <li><code>&lt;h3&gt;</code><span id="third-level">This is a 3rd level heading</span><code>&lt;/h3&gt;</code></li>
+            <li><code>&lt;h4&gt;</code><span id="fourth-level">This is a 4th level heading</span><code>&lt;/h4&gt;</code></li>
+            <li><code>&lt;h5&gt;</code><span id="fifth-level">This is a 5th level heading</span><code>&lt;/h5&gt;</code></li>
+            <li><code>&lt;h6&gt;</code><span id="sixth-level">This is a 6th level heading</span><code>&lt;/h6&gt;</code></li>
           </ul>
         </section>
+        <section id="links-anchors-jump">
+          <h3>Links and Anchors</h3>
+          <p>Links and anchors are integral elements of HTML, enabling users to navigate and interact with web content. Here, we explore their role and usage.</p>
+          
+          <h4>Hyperlinks (<code>&lt;a&gt;</code> Tags)</h4>
+          <p>Hyperlinks, often referred to as links, are created using the <code>&lt;a&gt;</code> (anchor) element. They allow you to connect web pages and resources, enabling users to move seamlessly between different parts of your website.</p>
+          
+          <h4>Anchor Tags with <code>id</code></h4>
+          <p>Anchor tags can also be enhanced with an <code>id</code> attribute. This creates anchor points within a page, making it possible to link to specific sections of the same page. For example, you can create a table of contents with links to different sections on a long webpage.</p>
+        
+          <h4>External and Internal Links</h4>
+          <p>When creating links, you can use absolute URLs for external resources, such as <code>https://www.example.com/page</code>. For internal links within your website, relative URLs are often used. Relative URLs specify the path from the current page to the target page.</p>
+          <p>External Link Example: <code>&lt;a href&equals;&quot;https&colon;&sol;&sol;www.google.com&quot;&gt;Google&lt;&sol;a&gt;</code> This would take a user to Google when they click the link.</p>
+          <p>Internal Link Example:  <code>&lt;a href&equals;&quot;#section-two&quot;&gt;Section 2&lt;&sol;a&gt;</code> This will take a user to an internal part of the website identified by it's id value.</p>
+          <h4>Target Attribute</h4>
+          <p>The <code>target</code> attribute in the anchor tag controls how links open. For instance, using <code>target="_blank"</code> opens the linked content in a new browser tab or window.</p>
+          <p><code>&lt;a href&equals;&quot;https&colon;&sol;&sol;www.google.com&quot;&nbsp;target&equals;&quot;&lowbar;blank&quot;&gt;Google&lt;&sol;a&gt;</code></p>
+          <p>Understanding the functionality of links and anchors is essential for effective website navigation and user experience. They play a crucial role in guiding visitors through your content.</p>
+        
+          <p>If you want to learn more about HTML elements, you can explore the comprehensive list provided by Mozilla: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">HTML Element Reference</a>.</p>
+        </section>
+        <section id="lists-jump">
+          <h3>Lists (Ordered and Unordered)</h3>
+          <div class="list-container">
+            <div class="column">
+              <h4>Ordered Lists (<code>&lt;ol&gt;</code>)</h4>
+              <p>Ordered lists are used to present content in a numbered sequence. Each list item is automatically assigned a number or another ordered marker.</p>
+              <p>Example:</p>
+              <ol class="list-example">
+                <li>&lt;ol&gt;</li>
+                <li>&nbsp;&nbsp;&lt;li&gt;Get fuel&lt;&sol;li&gt;</li>
+                <li>&nbsp;&nbsp;&lt;li&gt;Stop by the Computer Store&lt;&sol;li&gt;</li>
+                <li>&nbsp;&nbsp;&lt;li&gt;Stop by the grocery store&lt;&sol;li&gt;</li>
+                <li>&lt;&sol;ol&gt;</li>
+              </ol>
+              <p>This displays on the web page like:</p>
+              <ol class="list-with-bullets">
+                <li>Get fuel</li>
+                <li>Stop by the Computer Store</li>
+                <li>Stop by the grocery store</li>
+              </ol>
+            </div>
+            <div class="column">
+              <h4>Unordered Lists (<code>&lt;ul&gt;</code>)</h4>
+              <p>Unordered lists are used to present content with bulleted or other unordered markers. They are often used for lists without a specific order or sequence.</p>
+              <p>Example:</p>
+              <ul class="list-example">
+                <li>&lt;ul&gt;</li>
+                <li>&nbsp;&nbsp;&lt;li&gt;Stop by the Computer Store&lt;&sol;li&gt;</li>
+                <li>&nbsp;&nbsp;&lt;li&gt;Get fuel&lt;&sol;li&gt;</li>
+                <li>&nbsp;&nbsp;&lt;li&gt;Stop by the grocery store&lt;&sol;li&gt;</li>
+                <li>&lt;&sol;ul&gt;</li>
+              </ul>
+              <p>This displays on the web page like:</p>
+              <ul class="list-with-bullets">
+                <li>Stop by the Computer Store</li>
+                <li>Get fuel</li>
+                <li>Stop by the grocery store</li>                
+              </ul>
+              <p>For more info on lists, You can check out; <a href="https://www.geeksforgeeks.org/html-lists/">geeksforgeeks.org</a></p>
+            </div>
+          </div>
+        </section>
+        <section id="images-media-jump">
+          <h3>Images and Media</h3>
+          <div class="media-container">
+            <div class="column">
+              <h4>Images (<code>&lt;img&gt;</code>)</h4>
+              <p>Images are essential for adding visual content to your website. The <code>&lt;img&gt;</code> element is used to display images. You can specify the image source, alt text, and other attributes.</p>
+              <p>Like this: <code>&lt;img&nbsp;src&equals;&quot;&sol;images&sol;cats.jpg&quot;&nbsp;alt&equals;&quot;Image of cats&quot;&gt;</code> Remember; <code>&lt;img&gt;</code> tags are self closing, meaning they do not require a matching <code>&lt;&sol;img&gt;</code></p>
+              <img src="/webdev2/images/example-image.jpg" alt="Example Image" id="cats-image-example">
+              <p>Image created with the help of Bing's image generator</p>
+              <p>For more in-depth info on Images, Visit <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML">Mozilla.org</a></p>
+            </div>
+            <div class="column">
+              <h4>Media Elements</h4>
+              <p>Modern websites often include various media elements, such as audio and video. You can use <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> elements to embed media content, and specify formats, controls, and other attributes.</p>
+              <p>Like this: <code>&lt;video src&equals;&quot;example-video.mp4&quot;&nbsp;controls&gt;</code></p>
+              <video src="/webdev2/images/example-video.mp4" controls></video>
+              <p>Video produced with the help of AI at <a href="https://www.kapwing.com">https://www.kapwing.com/</a></p>
+              <p>For more in-depth info on embedding Video, Visit <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content">Mozilla.org</a></p>
+            </div>
+          </div>
+        </section>
+        <section id="tables-forms-jump">
+          <h3>Tables and Forms</h3>
+          <div class="tables-forms-container">
+            <div class="column">
+              <h4>Tables (<code>&lt;table&gt;</code>)</h4>
+              <p>Tables are used to organize data in rows and columns. The <code>&lt;table&gt;</code> element is the container for creating tables. You can add rows with <code>&lt;tr&gt;</code> and define headers with <code>&lt;th&gt;</code>.</p>
+              <p>Example:</p>
+              <ul>
+                <li>&lt;table&gt;</li>
+                <li>&nbsp;&nbsp;&lt;tr&gt;</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Header 1&lt;&sol;th&gt;</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Header 2&lt;&sol;th&gt;</li>
+                <li>&nbsp;&nbsp;&lt;&sol;tr&gt;</li>
+                <li>&nbsp;&nbsp;&lt;tr&gt;</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Data 1&lt;&sol;td&gt;</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Data 2&lt;&sol;td&gt;</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Header 2&lt;&sol;th&gt;</li>
+                <li>&lt;&sol;table&gt;</li>
+              </ul>
+              <p>It displays on the page like this:</p>
+              <table>
+                <tr>
+                  <th>Header 1</th>
+                  <th>Header 2</th>
+                </tr>
+                <tr>
+                  <td>Data 1</td>
+                  <td>Data 2</td>
+                </tr>
+              </table>
+              <p>For more in-depth info on creating tables, Visit; <a href="https://www.quackit.com/html/html_table_tutorial.cfm">https://www.quackit.com</a></p>
+            </div>
+            <div class="column">
+              <h4>Forms (<code>&lt;form&gt;</code>)</h4>
+              <p>Forms are crucial for user input and interaction. You can create forms using the <code>&lt;form&gt;</code> element. Within forms, you can add input fields, buttons, and other form controls.</p>
+              <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                <br>
+                <input type="submit" value="Submit">
+              </form> <!-- You can add more form elements above here -->
+              <div class="note">Note: Autofill suggestions are a <em>'browser'</em> feature to help you fill out the form quickly. In this example, clicking the submit button doesn't actually do anything with the data you might enter into these examples.</div>
+            </div>
+          </div>
+        </section>
+        <section id="navigation-jump">
+          <h3>Navigation</h3>
+          <div class="navigation-container">
+            <div class="column">
+              <h4>Navigation Menus</h4>
+              <p>Navigation menus are essential for helping users explore your website. You can create navigation menus using HTML lists, often ordered or unordered lists (<code>&lt;ol&gt;</code> or <code>&lt;ul&gt;</code>), and list items (<code>&lt;li&gt;</code>).</p>
+              <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <!-- Add more menu items here -->
+              </ul>
+            </div>
+            <div class="column">
+              <h4>Navigation Bars</h4>
+              <p>Navigation bars are often placed at the top or side of a webpage. You can create navigation bars using HTML and CSS. CSS can be used to style and position navigation elements.</p>
+              <nav>
+                <ul>
+                  <li><a href="#home">Home</a></li>
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#services">Services</a></li>
+                  <li><a href="#contact">Contact</a></li>
+                  <!-- Add more bar items here -->
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </section>
+        
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">Here you will find a full list of available tags (Mozilla.org)</a></li>
+      
         
 
         <section id="doctype-declaration-jump"> 
           <h3>Doctype Declaration</h3>
           <p>This is the very first line in an HTML document. This lets the browser know what type of document format it is working with.</p>
-          <p><code>&lt;!DOCTYPE html&gt;</code>&nbsp; It is <strong>required </strong>as the first line. It is always followed by:</p>
+          <p><code>&lt;!DOCTYPE html&gt;</code>&nbsp; It is <strong><em>required</em> </strong>as the first line. It is always followed by:</p>
           <p><code>&lt;html lang="en"&gt;</code>&nbsp; "en" is for English and is changed depending on the language the document is in.</p>
           <p>For instance, "fr" is for French and "sp" is for Spanish.</p>
-          <p>This is <strong>Always </strong>the second line of the document, the beginning of the HTML structure.</p>
+          <p>This is <strong><em>Always</em> </strong>the second line of the document, the beginning of the HTML structure.</p>
         </section>
         
         <section id="viewport-meta-tag-jump">
           <h3>Viewport Meta Tag</h3>
-          <p>...</p>
+          <p>This is crucial for responsive design. It gives the browser instructions on how to control the page’s dimensions and scaling.</p>
         </section>
     
         <section id="css-reset-jump">
           <h3>CSS Reset</h3>
-          <p>...</p>
+          <p>This is a set of CSS rules that resets the styling of all HTML elements to a consistent baseline, in case there are any discrepancies between different browsers.</p>
         </section>
         
         <section id="layout-jump">
           <h3>Layout (grid System)</h3>
-          <p>...</p>
+          <p>A grid system can help you create a balanced layout design. It sets the margins and gutters to a consistent length, and creates a designated space to add each piece of content.</p>
         </section>
     
         <section id="typography-jump">
           <h3>Typogrophy</h3>
-          <p>...</p>
+          <p>Set up base font size, line-height, and font family. These can be adjusted as needed based on the design.</p>
         </section>
         
         <section id="colors-jump">
           <h3>Colors</h3>
-          <p>...</p>
-        </section>
-    
-        <section id="images-jump">
-          <h3>Images</h3>
-          <p>...</p>
-        </section>
-        
-        <section id="navigation-jump">
-          <h3>Navigation</h3>
-          <p>...</p>
+          <p>Define your basic color scheme, including primary, secondary, and accent colors.</p>
         </section>
     
         <section id="head-foot-jump">
           <h3>Headers & Footers</h3>
-          <p>...</p>
+          <p>Header: typically contains elements like the website logo, navigation menu, and sometimes a search bar or call-to-action button. It’s often the first thing a visitor sees when they land on your site, so it’s important to make it informative and easy to navigate</p>
+          <p>A footer usually contains information like contact info, social media links, or a sitemap</p>
         </section>
 
         <section id="commenting-code-jump">
           <h3>Commenting Code</h3>
-          <p>...</p>
+          <p>Adding comments to your code is <strong><em>Important.</em></strong> It helps in several ways:</p>
+          <ul>
+            <li>Makes code human-readable and elegant: Comments can explain what the code does and clarify the decisions behind code design. They make the code easier to understand for yourself and others.</li>
+            <li>Facilitates debugging: Comments can be used to hide your HTML, CSS, and JavaScript code, or to temporarily disable code while testing.</li>
+            <li>Helps in team collaboration: They allow your team to understand and edit your code easily.</li>
+            <li>Documents your thought process: Comments help you document and communicate about your code and thought process to yourself (and others).</li>
+            <li>Aids future understanding: They remind you what you were thinking/doing when you come back to a project after months of not working on it.</li>
+          </ul>
+          <p>In HTML, anything between <code>&lt;&excl;&hyphen;&hyphen;&nbsp;</code>and<code>&nbsp;&hyphen;&hyphen;&gt;</code> will not be displayed in the browser but will be visible when looking at the source code.</p>
+          <p>Here are examples of how to comment in HTML, CSS, and JavaScript:</p>
+          <ul>
+            <li><strong>HTML</strong></li>
+            <li>&lt;&excl;&hyphen;&hyphen;&nbsp;</code>This is a single line comment in HTML<code>&nbsp;&hyphen;&hyphen;&gt;</code></li>
+            <li>
+              <p><code>&lt;&excl;&hyphen;&hyphen;&nbsp;</code></p>
+              <p>This is a multi-line comment in HTML</p>
+              <p>It spans multiple lines.</p>
+              <p><code>&nbsp;&hyphen;&hyphen;&gt;</code></p>
+            </li>
+          </ul>
+          <ul>
+            <li><strong>CSS</strong></li>
+            <li><code>&sol;&ast;&nbsp;</code>This is a single-line comment in CSS<code>&nbsp;&ast;&sol;</code></li>
+            <li>
+              <p><code>&sol;&ast;</code></p>
+              <p>This is a multi-line comment in CSS</p>
+              <p>It spans multiple lines</p>
+              <p><code>&ast;&sol;</code></p>
+            </li>
+          </ul>
+          <ul>
+            <li><strong>JavaScript</strong></li>
+            <li><code>&sol;&sol;&nbsp;</code>This is a single-line comment in JavaScript</li>
+            <li>
+              <p><code>&sol;&ast;</code></p>
+              <p>This is a multi-line comment in JavaScript</p>
+              <p>It spans multiple lines</p>
+              <p><code>&ast;&sol;</code></p>
+            </li>
+          </ul>
         </section>
+        <p>Lesson #1 wraps up the fundamental concepts of web design, providing you with a strong foundation to create effective and visually appealing websites. You've explored the core principles, including HTML structure, the doctype declaration, viewport meta tags, CSS reset, grid systems for layout, typography, color schemes, working with images, navigation, headers, footers, and the importance of commenting your code.</p>
+        <p>If you're new to web development, these basics are your starting point for crafting well-structured and beautifully designed web pages. Remember, understanding these elements is crucial, and as you progress, you'll build upon this knowledge in your journey to becoming a proficient web developer.</p>
 
       </div>
     </section>
@@ -151,7 +355,7 @@
     </section>
     <section class="lessons" id="lesson-three">
       <h2>Lesson #3 Coming Soon!!!</h2>
-      <img src="/webdev2/images/under-construction.jpg" alt="under construction image">
+      <img src="/images/backgrounds/under-construction.jpg" alt="under construction image">
     </section>
     <section class="lessons" id="lesson-four">
       <h2>Lesson #4 Coming Soon!!!</h2>
