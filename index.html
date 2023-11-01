@@ -6,8 +6,8 @@
   <meta name="author" content="nclogic" /> <!-- This identifies the author of the document -->
   <meta name="description" content="This webdev2 website aims to provide basic to intermediate info for the beginner web developer to help them understand the HTML/CSS syntax and fundamentals." /> <!-- This provides information to search engines as to what the site is about -->
   <link rel="icon" href="logo.png" type="image/xicon" /> <!-- This is the logo/icon that shows up on the browser tab next to the title when visiting the page-->
-  <link rel="stylesheet" type="text/css" href="/webdev2/styles/main.css" /> <!-- This is needed if you want an external stylesheet - there needs to be a link for all additional css files that you use-->
-  <script src="/webdev2/scripts/main.js" defer></script> <!-- This is needed to if you want an external JavaScript, there needs to be a link for all additional JavaScript files that you use -->
+  <link rel="stylesheet" type="text/css" href="/styles/main.css" /> <!-- This is needed if you want an external stylesheet - there needs to be a link for all additional css files that you use-->
+  <script src="/scripts/main.js" defer></script> <!-- This is needed to if you want an external JavaScript, there needs to be a link for all additional JavaScript files that you use -->
   <title>HTML/CSS Reference Site #2</title> <!-- This is the "Site" Title. It is different than the "Page" title. This title shows up on the browser tab and as the suggested text when bookmarking a page -->
 </head> <!-- The end of the head section -->
   <body> <!-- The beginning of the body section -->
@@ -37,36 +37,138 @@
       <p>
         In the pages that follow, we'll explore a wide array of topics, from basic HTML/CSS techniques to dynamic JavaScript interactivity. So, let's dive in and create web experiences that leave a lasting impression.
       </p>
-      <img id="tsunami" src="/webdev2/images/tidalwave.jpg" alt="An image of a tidal wave with the text 'Prepare for a Tsunami of knowledge'">
+      <img id="tsunami" src="/images/backgrounds/tidalwave.jpg" alt="An image of a tidal wave with the text 'Prepare for a Tsunami of knowledge'">
     </section>
-    <section id="lesson-one">
-      <h2>Lesson #1 the basics</h2>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit ipsa, nesciunt similique sapiente distinctio ut in quod cumque vero porro facere magni modi inventore soluta animi praesentium. Quasi, nulla quidem!</p>
+    <section class="lessons" id="lesson-one">
+      <h2 class="lesson-title">Lesson #1: The Basics of Web Design</h2>
+      <div class="lesson-content">
+        <p>When delving into web design, it's essential to understand the fundamental concepts that underpin successful websites. Here, we'll explore the core principles you need to know.</p>
+    
+        <ul class="basic-concepts-list clickable-element"> <!-- This list is for jumping to the content shown -->
+          <li><a href="#html-structure-jump">HTML Structure</a></li>
+          <li><a href="#doctype-declaration-jump">Doctype Declaration</a></li>
+          <li><a href="#viewport-meta-tag-jump">Viewport Meta Tag</a></li>
+          <li><a href="#css-reset-jump">CSS Reset</a></li>
+          <li><a href="#layout-jump">Layout (Grid System)</a></li>
+          <li><a href="#typography-jump">Typography</a></li>
+          <li><a href="#colors-jump">Colors</a></li>
+          <li><a href="#images-jump">Images</a></li>
+          <li><a href="#navigation-jump">Navigation</a></li>
+          <li><a href="#head-foot-jump">Headers and Footers</a></li>
+          <li><a href="commenting-code-jump"></a>Commenting Code</li>
+        </ul>
+    
+        <p>These are the building blocks of web design, and understanding them will pave the way for creating effective and visually appealing websites.</p>
+    
+        <p>If you're new to web development, it's crucial to start with a strong foundation. These basics will guide you in crafting well-structured and beautifully designed web pages.</p>
+        
+        
+        <section id="html-structure-jump">
+          <h3>HTML Structure</h3>
+          <p>HTML, which stands for HyperText Markup Language, is the foundation of web pages. It uses various tags to structure and organize content. Understanding the basics of HTML structure is crucial for web design.</p>
+          <ul>
+            <li>
+              <h4>Heading Tags (Not actual size, just sized to display sizes relative to each other.)</h4>
+              <ul>
+                <li><code>&lt;h1&gt;</code><span id="first-level">This is a 1st level heading</span><code>&lt;/h1&gt;</code></li>
+                <li><code>&lt;h2&gt;</code><span id="second-level">This is a 2nd level heading</span><code>&lt;/h2&gt;</code></li>
+                <li><code>&lt;h3&gt;</code><span id="third-level">This is a 3rd level heading</span><code>&lt;/h3&gt;</code></li>
+                <li><code>&lt;h4&gt;</code><span id="fourth-level">This is a 4th level heading</span><code>&lt;/h4&gt;</code></li>
+                <li><code>&lt;h5&gt;</code><span id="fifth-level">This is a 5th level heading</span><code>&lt;/h5&gt;</code></li>
+                <li><code>&lt;h6&gt;</code><span id="sixth-level">This is a 6th level heading</span><code>&lt;/h6&gt;</code></li>
+              </ul>
+            </li>
+            <li><h4>Links and Anchors</h4></li>
+            <li><h4>Lists (Ordered and Unordered)</h4></li>
+            <li><h4>Images and Media</h4></li>
+            <li><h4>Tables and Forms</h4></li>
+            <li><h4>Navigation</h4></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">Here you will find a full list of available tags (Mozilla.org)</a></li>
+          </ul>
+        </section>
+        
+
+        <section id="doctype-declaration-jump"> 
+          <h3>Doctype Declaration</h3>
+          <p>This is the very first line in an HTML document. This lets the browser know what type of document format it is working with.</p>
+          <p><code>&lt;!DOCTYPE html&gt;</code>&nbsp; It is <strong>required </strong>as the first line. It is always followed by:</p>
+          <p><code>&lt;html lang="en"&gt;</code>&nbsp; "en" is for English and is changed depending on the language the document is in.</p>
+          <p>For instance, "fr" is for French and "sp" is for Spanish.</p>
+          <p>This is <strong>Always </strong>the second line of the document, the beginning of the HTML structure.</p>
+        </section>
+        
+        <section id="viewport-meta-tag-jump">
+          <h3>Viewport Meta Tag</h3>
+          <p>...</p>
+        </section>
+    
+        <section id="css-reset-jump">
+          <h3>CSS Reset</h3>
+          <p>...</p>
+        </section>
+        
+        <section id="layout-jump">
+          <h3>Layout (grid System)</h3>
+          <p>...</p>
+        </section>
+    
+        <section id="typography-jump">
+          <h3>Typogrophy</h3>
+          <p>...</p>
+        </section>
+        
+        <section id="colors-jump">
+          <h3>Colors</h3>
+          <p>...</p>
+        </section>
+    
+        <section id="images-jump">
+          <h3>Images</h3>
+          <p>...</p>
+        </section>
+        
+        <section id="navigation-jump">
+          <h3>Navigation</h3>
+          <p>...</p>
+        </section>
+    
+        <section id="head-foot-jump">
+          <h3>Headers & Footers</h3>
+          <p>...</p>
+        </section>
+
+        <section id="commenting-code-jump">
+          <h3>Commenting Code</h3>
+          <p>...</p>
+        </section>
+
+      </div>
     </section>
-    <section id="lesson-two">
+    
+    <section class="lessons" id="lesson-two">
       <h2>Lesson #2 Let's start making a page</h2>
-      <img src="/webdev2/images/under-construction.jpg" alt="under construction image">
+      <img src="/images/backgrounds/under-construction.jpg" alt="under construction image">
     </section>
-    <section id="lesson-three">
-      <h2>Lesson #3 Comming Soon!!!</h2>
-      <img src="/webdev2/images/under-construction.jpg" alt="under construction image">
+    <section class="lessons" id="lesson-three">
+      <h2>Lesson #3 Coming Soon!!!</h2>
+      <img src="/images/backgrounds/under-construction.jpg" alt="under construction image">
     </section>
-    <section id="lesson-four">
-      <h2>Lesson #4 Comming Soon!!!</h2>
-      <img src="/webdev2/images/under-construction.jpg" alt="under construction image">
+    <section class="lessons" id="lesson-four">
+      <h2>Lesson #4 Coming Soon!!!</h2>
+      <img src="/images/backgrounds/under-construction.jpg" alt="under construction image">
     </section>
-    <section id="lesson-five">
-      <h2>Lesson #5 Comming Soon!!!</h2>
-      <img src="/webdev2/images/under-construction.jpg" alt="under construction image">
+    <section class="lessons" id="lesson-five">
+      <h2>Lesson #5 Coming Soon!!!</h2>
+      <img src="/images/backgrounds/under-construction.jpg" alt="under construction image">
     </section>
     <div class="title-section">
-      <div class="border-left clickable-element" id="back-link">Back</div>
+      <div class="border-left clickable-element unselectable" id="back-link">Back</div>
       <div class="spacer"></div>    
-      <div class="section-title clickable-element" id="first-section-title"> 
+      <div class="section-title clickable-element unselectable" id="first-section-title"> 
         <h2>Let's get started</h2>        
       </div>
       <div class="spacer"></div>
-      <div class="border-right clickable-element" id="next-link">Next</div>
+      <div class="border-right clickable-element unselectable" id="next-link">Next</div>
     </div>
   </main>
 
