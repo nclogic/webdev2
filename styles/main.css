@@ -14,7 +14,10 @@
   box-sizing: border-box;
 }
 html {
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
+  line-height: 1.2;
+  font-weight: 500;
 }
 
 body {
@@ -63,11 +66,16 @@ img {
   display: block;
   margin: 0 auto;
 }
+ul:not(.list-with-bullets), .list-example {
+  list-style-type: none;
+}
 ul ul {  
   padding-left: 25px;
   margin-bottom: .75rem;
 }
-
+table th, table td {
+  padding-left: 10px; /* You can adjust the value to control the spacing between the table rows*/
+}
 .unselectable {
   user-select: none;
 }
@@ -138,6 +146,14 @@ align-items: center;
 .lesson-content p {
   margin-bottom: .5rem;
 }
+.column {
+  padding-left: 25px;
+}
+
+#jump-links-container {
+  display: flex;
+  flex-direction: row;
+}
 #html-structure-jump {
   margin-bottom: .75rem;
 }
@@ -150,7 +166,6 @@ align-items: center;
 #prelude { /* Styling the prelude text*/
   font-size: 1.5em;
   letter-spacing: 1px;
-  line-height: 1.2;
   font-weight: 600;
   
 }
@@ -159,7 +174,13 @@ align-items: center;
   height: 100%;
   margin-top: 20px;
 }
-
+#cats-image-example, video {
+  max-width: 25%;
+  height: auto;
+  display: flex;
+  align-items: start;
+  margin: 0;
+}
 #lesson-one {
   display: none;
 }
