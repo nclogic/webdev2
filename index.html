@@ -13,17 +13,27 @@
   <script src="/webdev2/scripts/main.js" defer></script> <!-- This is needed to if you want an external JavaScript, there needs to be a link for all additional JavaScript files that you use -->
   <title>HTML/CSS Reference Site #2</title> <!-- This is the "Site" Title. It is different than the "Page" title. This title shows up on the browser tab and as the suggested text when bookmarking a page -->
 </head> <!-- The end of the head section -->
-  <body> <!-- The beginning of the body section -->
-    <header>
+<body> <!-- The beginning of the body section -->
+  <header>
+    <div>
       <img src="logo.png" alt="Logo Icon">
-      <h1>&nbsp;HTML/CSS Reference Site&nbsp;</h1>
-      <nav>
-          <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="contact.html">Contact</a></li>
-          </ul>
-      </nav>
+      <div class="lessons-dropdown">
+        <a href="#" class="dropdown-trigger">lessons</a>
+        <ul class="dropdown-menu">
+          <li id="lesson-one-link">lesson 1</li>
+          <li id="lesson-two-link">lesson 2</li>
+          <li id="lesson-three-link">lesson 3</li>
+        </ul>
+      </div>
+    </div>
+    <h1>&nbsp;HTML/CSS Reference Site&nbsp;</h1>
+    <nav>
+      <ul>
+        <li><a href="/webdev2/index.html">Home</a></li>
+        <li><a href="/webdev2/about.html">About</a></li>
+        <li><a href="/webdev2/contact.html">Contact</a></li>          
+      </ul>
+    </nav>
   </header>
 
   <main> <!-- Main content goes here -->
@@ -69,7 +79,7 @@
                 <li><a href="#typography-jump">Typography</a></li>
                 <li><a href="#colors-jump">Colors</a></li>
                 <li><a href="#head-foot-jump">Headers and Footers</a></li>
-                <li><a href="commenting-code-jump">Commenting Code</a></li>
+                <li><a href="#commenting-code-jump">Commenting Code</a></li>
               </ul>
             </div>
           </div>
@@ -172,7 +182,7 @@
               <h4>Media Elements</h4>
               <p>Modern websites often include various media elements, such as audio and video. You can use <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> elements to embed media content, and specify formats, controls, and other attributes.</p>
               <p>Like this: <code>&lt;video src&equals;&quot;example-video.mp4&quot;&nbsp;controls&gt;</code></p>
-              <video src="/webdev2/images/example-video.mp4" controls></video>
+              <video src="/webdev2/videos/example-video.mp4" id="video-player-example" controls></video>
               <p>Video produced with the help of AI at <a href="https://www.kapwing.com">https://www.kapwing.com/</a></p>
               <p>For more in-depth info on embedding Video, Visit <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content">Mozilla.org</a></p>
             </div>
@@ -232,7 +242,7 @@
             <div class="column">
               <h4>Navigation Menus</h4>
               <p>Navigation menus are essential for helping users explore your website. You can create navigation menus using HTML lists, often ordered or unordered lists (<code>&lt;ol&gt;</code> or <code>&lt;ul&gt;</code>), and list items (<code>&lt;li&gt;</code>).</p>
-              <ul>
+              <ul id="menu-example-vert">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
@@ -244,12 +254,11 @@
               <h4>Navigation Bars</h4>
               <p>Navigation bars are often placed at the top or side of a webpage. You can create navigation bars using HTML and CSS. CSS can be used to style and position navigation elements.</p>
               <nav>
-                <ul>
+                <ul id="menu-example-horz">
                   <li><a href="#home">Home</a></li>
                   <li><a href="#about">About</a></li>
                   <li><a href="#services">Services</a></li>
                   <li><a href="#contact">Contact</a></li>
-                  <!-- Add more bar items here -->
                 </ul>
               </nav>
             </div>
@@ -262,42 +271,43 @@
 
         <section id="doctype-declaration-jump"> 
           <h3>Doctype Declaration</h3>
-          <p>This is the very first line in an HTML document. This lets the browser know what type of document format it is working with.</p>
-          <p><code>&lt;!DOCTYPE html&gt;</code>&nbsp; It is <strong><em>required</em> </strong>as the first line. It is always followed by:</p>
-          <p><code>&lt;html lang="en"&gt;</code>&nbsp; "en" is for English and is changed depending on the language the document is in.</p>
-          <p>For instance, "fr" is for French and "sp" is for Spanish.</p>
-          <p>This is <strong><em>Always</em> </strong>the second line of the document, the beginning of the HTML structure.</p>
+          <p>The Doctype Declaration is the very first line in an HTML document. Its primary purpose is to inform the web browser about the type of document format it will be rendering.</p>
+          <p><code>&lt;!DOCTYPE html&gt;</code>&nbsp; This declaration is a mandatory and essential component of an HTML document, always placed at the document's beginning.</p>
+          <p> It is immediately followed by the opening <code>&lt;html lang="<em>en</em>"&gt;</code>&nbsp;  tag, which includes the <em>lang</em> attribute specifying the language of the document. For example, "<em>en</em>" is used for English, while "<em>fr</em>" represents French, and "<em>es</em>" stands for Spanish.</p>
+          <p>The <html> tag, along with its lang attribute, sets the language for the entire document and ensures proper rendering and language support. This line always appears as the second line in the HTML structure.</p>
         </section>
         
         <section id="viewport-meta-tag-jump">
           <h3>Viewport Meta Tag</h3>
-          <p>This is crucial for responsive design. It gives the browser instructions on how to control the page’s dimensions and scaling.</p>
+          <p>The viewport meta tag plays a crucial role in achieving responsive web design.</p>
+          <p>It provides essential instructions to the web browser on how to manage the page's dimensions and scaling, ensuring that web content adapts effectively to various screen sizes and devices.</p>
+          <p><code>&lt;meta name&equals;&quot;viewport&quot; content&equals;&quot;width&equals;device-width, initial-scale&equals;1.0&quot; &sol;&gt;</code>  (notice this is a self closing element tag)</p>
         </section>
     
         <section id="css-reset-jump">
           <h3>CSS Reset</h3>
-          <p>This is a set of CSS rules that resets the styling of all HTML elements to a consistent baseline, in case there are any discrepancies between different browsers.</p>
+          <p>A CSS reset is a collection of CSS rules designed to reset the default styling of HTML elements to a consistent baseline. It serves to eliminate any discrepancies or variations in rendering across different web browsers, ensuring a more uniform and predictable appearance of web content.</p>
         </section>
         
         <section id="layout-jump">
           <h3>Layout (grid System)</h3>
-          <p>A grid system can help you create a balanced layout design. It sets the margins and gutters to a consistent length, and creates a designated space to add each piece of content.</p>
+          <p>A grid system is an invaluable tool for achieving balanced layout designs. It establishes uniform margins and gutters, providing a structured framework for organizing and placing each piece of content. This systematic approach simplifies the design process and enhances the overall visual consistency of your web pages.</p>
         </section>
     
         <section id="typography-jump">
           <h3>Typogrophy</h3>
-          <p>Set up base font size, line-height, and font family. These can be adjusted as needed based on the design.</p>
+          <p>Establish the foundation of your typography by configuring the base font size, line-height, and font family. These elements serve as the fundamental building blocks of your text styles, and they can be customized to align with your specific design requirements.</p>
         </section>
         
         <section id="colors-jump">
           <h3>Colors</h3>
-          <p>Define your basic color scheme, including primary, secondary, and accent colors.</p>
+          <p>Define your foundational color scheme, encompassing primary, secondary, and accent colors that will underpin the visual identity of your website.</p>
         </section>
     
         <section id="head-foot-jump">
           <h3>Headers & Footers</h3>
-          <p>Header: typically contains elements like the website logo, navigation menu, and sometimes a search bar or call-to-action button. It’s often the first thing a visitor sees when they land on your site, so it’s important to make it informative and easy to navigate</p>
-          <p>A footer usually contains information like contact info, social media links, or a sitemap</p>
+          <p>Header: Typically, a website's header features key elements such as the site logo, navigation menu, and sometimes a search bar or a prominent call-to-action button. As one of the first elements visitors encounter, it plays a crucial role in delivering information and ensuring seamless navigation.</p>
+          <p>Footer: In contrast, the footer generally houses essential information like contact details, links to social media profiles, and often a sitemap. It serves as the final point of interaction, providing valuable supplementary content and connections.</p>
         </section>
 
         <section id="commenting-code-jump">
@@ -355,7 +365,7 @@
     </section>
     <section class="lessons" id="lesson-three">
       <h2>Lesson #3 Coming Soon!!!</h2>
-      <img src="/images/backgrounds/under-construction.jpg" alt="under construction image">
+      <img src="/webdev2/images/under-construction.jpg" alt="under construction image">
     </section>
     <section class="lessons" id="lesson-four">
       <h2>Lesson #4 Coming Soon!!!</h2>
@@ -383,8 +393,8 @@
   <footer> <!-- Footer content goes here usually contains links and info That doesn't need to be taking up space in the nav menu, but can also contain nav links -->
       <p>&copy; nclogic</p> <!-- This is typically a company name if this were to be a company website and you can also see "html entity text" - "&copy" which displays a copywrite symbol -->
       <ul>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="/webdev2/privacy.html">Privacy Policy</a></li>
+          <li><a href="/webdev2/contact.html">Contact Us</a></li>
       </ul>
   </footer>
 </body> <!-- The end of the body section -->
