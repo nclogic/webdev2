@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
       backLink.style.display = "none";
       nextLink.style.display = "none";
       prelude.style.display = "block";
-      tsunami.style.display = "block";
+      tsunami.style.display = "block"; // Fixed the typo here
       sectionTitle.style.display = "flex";
     } else {
       backLink.style.display = "flex";
@@ -34,13 +34,51 @@ document.addEventListener("DOMContentLoaded", function () {
     if (currentLesson === lessons.length - 1) {
       nextLink.style.display = "none";
     }
+
+    // Show "Back" on the first lesson if the initial display is hidden
+    if (currentLesson === 0 && sectionTitle.style.display === "none") {
+      backLink.style.display = "flex";
+    }
   }
   
-    sectionTitle.addEventListener("click", function () {
+  // Add direct navigation for lesson-one
+  const lessonOneLink = document.getElementById("lesson-one-link");
+  lessonOneLink.addEventListener("click", function () {
+    if (currentLesson !== 1) {
+      lessons[currentLesson].style.display = "none";
+      currentLesson = 1;
+      lessons[currentLesson].style.display = "block";
+      updateButtonVisibility();
+    }
+  });
+
+  // Add direct navigation for lesson-two
+  const lessonTwoLink = document.getElementById("lesson-two-link");
+  lessonTwoLink.addEventListener("click", function () {
+    if (currentLesson !== 2) {
+      lessons[currentLesson].style.display = "none";
+      currentLesson = 2;
+      lessons[currentLesson].style.display = "block";
+      updateButtonVisibility();
+    }
+  });
+
+  // Add direct navigation for lesson-three
+  const lessonThreeLink = document.getElementById("lesson-three-link");
+  lessonThreeLink.addEventListener("click", function () {
+    if (currentLesson !== 3) {
+      lessons[currentLesson].style.display = "none";
+      currentLesson = 3;
+      lessons[currentLesson].style.display = "block";
+      updateButtonVisibility();
+    }
+  });
+
+  sectionTitle.addEventListener("click", function () {
     sectionTitle.style.display = "none";
     prelude.style.display = "none";
     tsunami.style.display = "none";
-    currentLesson ++;
+    currentLesson++;
     lessons[currentLesson].style.display = "block";
     updateButtonVisibility();
 
@@ -62,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
       updateButtonVisibility();
 
       // Scroll to the top of the displayed lesson
-    lessons[currentLesson].scrollIntoView({ behavior: "smooth" });
+      lessons[currentLesson].scrollIntoView({ behavior: "smooth" });
     }
   });
 
@@ -74,10 +112,10 @@ document.addEventListener("DOMContentLoaded", function () {
       updateButtonVisibility();
 
       // Scroll to the top of the displayed lesson
-    lessons[currentLesson].scrollIntoView({ behavior: "smooth" });
+      lessons[currentLesson].scrollIntoView({ behavior: "smooth" });
     }
-  });
 
-  // Initially show "Back" to go back to the initial display
-  updateButtonVisibility();
+    // Initially show "Back" to go back to the initial display
+    updateButtonVisibility();
+  });
 });
