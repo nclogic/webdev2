@@ -73,8 +73,16 @@ ul ul {
   padding-left: 25px;
   margin-bottom: .75rem;
 }
+li {
+  padding: 4px 8px;
+}
 table th, table td {
   padding-left: 10px; /* You can adjust the value to control the spacing between the table rows*/
+}
+code {
+  font-weight: 600;
+  white-space: normal; /* Allow text to wrap within code elements */
+  word-wrap: break-word; /* Wrap long words if necessary */
 }
 .unselectable {
   user-select: none;
@@ -149,7 +157,35 @@ align-items: center;
 .column {
   padding-left: 25px;
 }
-
+.dropdown-menu {
+  background-color: #1fb9f9;
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+#menu-example-vert {
+  width: 88px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--header-footer-background-color);
+  margin-bottom: 10px;
+  padding: 8px;
+}
+#menu-example-horz {
+  width: 340px;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  background-color: var(--header-footer-background-color);
+  margin-bottom: 10px;
+  padding: 4px;
+}
+#menu-example-horz li {
+  flex: 1; /* Distribute space evenly among list items */
+  text-align: center; /* Center-align the text within list items */
+  font-size: 100%;
+}
 #jump-links-container {
   display: flex;
   flex-direction: row;
@@ -160,8 +196,16 @@ align-items: center;
 #doctype-declaration-jump {
   margin-bottom: .75rem;
 }
-#doctype-declaration-jump p {
+#doctype-declaration-jump p,
+#viewport-meta-tag-jump p,
+#css-reset-jump p,
+#layout-jump p,
+#typography-jump p,
+#colors-jump p,
+#head-foot-jump p,
+#commenting-code-jump p {
   margin-bottom: .25rem;
+  margin-left: .60rem;
 }
 #prelude { /* Styling the prelude text*/
   font-size: 1.5em;
@@ -174,12 +218,12 @@ align-items: center;
   height: 100%;
   margin-top: 20px;
 }
-#cats-image-example, video {
+#cats-image-example, #video-player-example {
   max-width: 25%;
   height: auto;
   display: flex;
   align-items: start;
-  margin: 0;
+  margin: 8px;
 }
 #lesson-one {
   display: none;
@@ -215,8 +259,34 @@ align-items: center;
 #sixth-level {
   font-size: .8rem;
 }
+/* style for the dropdown lessons menu */
+/* Hide the submenu by default */
+.lessons-dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+}
+
+/* Style the dropdown trigger (Lessons link) */
+.lessons-dropdown .dropdown-trigger {
+  cursor: pointer;
+}
+
+/* Show the submenu on hover */
+.lessons-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Style the submenu links */
+.lessons-dropdown .dropdown-menu li {
+  padding: 5px;
+}
 
 /* Responsive design using media queries */
+@media (max-width: 1024px) {
+  #cats-image-example, #video-player-example {
+    max-width: 40%;
+  }
+}
 @media (max-width: 768px) {
   /* For screens smaller than 768px, adjust the header and navigation layout */
   /* on small screens, it is preferred to have items in a column rather than a row because of small screen width. It is done by changing properties such as adding a flex-direction property. row is the default direction. */
@@ -233,5 +303,19 @@ align-items: center;
   nav ul li {
       margin-right: 0;
       margin-bottom: 10px;
+  }
+  #cats-image-example, #video-player-example {
+    max-width: 60%;
+  }
+}
+@media (max-width: 430px) {
+  #menu-example-horz li {
+    flex: 1; /* Distribute space evenly among list items */
+    text-align: center; /* Center-align the text within list items */
+    font-size: 75%;
+    margin: 2px;
+  }
+  #menu-example-horz {
+    padding: 2px;
   }
 }
