@@ -41,39 +41,32 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
   
-  // Add direct navigation for lesson-one
-  const lessonOneLink = document.getElementById("lesson-one-link");
-  lessonOneLink.addEventListener("click", function () {
-    if (currentLesson !== 1) {
-      lessons[currentLesson].style.display = "none";
-      currentLesson = 1;
-      lessons[currentLesson].style.display = "block";
-      updateButtonVisibility();
-    }
-  });
+// Get all direct navigation links
+const lessonLinks = [
+  document.getElementById("lesson-one-link"),
+  document.getElementById("lesson-two-link"),
+  document.getElementById("lesson-three-link"),
+  // Add more lesson links as needed
+];
 
-  // Add direct navigation for lesson-two
-  const lessonTwoLink = document.getElementById("lesson-two-link");
-  lessonTwoLink.addEventListener("click", function () {
-    if (currentLesson !== 2) {
-      lessons[currentLesson].style.display = "none";
-      currentLesson = 2;
-      lessons[currentLesson].style.display = "block";
-      updateButtonVisibility();
-    }
-  });
+// Add event listeners to all direct navigation links
+for (let i = 0; i < lessonLinks.length; i++) {
+  lessonLinks[i].addEventListener("click", function () {
+    // Hide initial display elements
+    sectionTitle.style.display = "none";
+    prelude.style.display = "none";
+    tsunami.style.display = "none";
 
-  // Add direct navigation for lesson-three
-  const lessonThreeLink = document.getElementById("lesson-three-link");
-  lessonThreeLink.addEventListener("click", function () {
-    if (currentLesson !== 3) {
-      lessons[currentLesson].style.display = "none";
-      currentLesson = 3;
-      lessons[currentLesson].style.display = "block";
-      updateButtonVisibility();
-    }
-  });
+    // Hide current lesson and show selected lesson
+    lessons[currentLesson].style.display = "none";
+    currentLesson = i + 1;  // The lesson number is one more than the index
+    lessons[currentLesson].style.display = "block";
 
+    // Update button visibility
+    updateButtonVisibility();
+  });
+}
+  
   sectionTitle.addEventListener("click", function () {
     sectionTitle.style.display = "none";
     prelude.style.display = "none";
