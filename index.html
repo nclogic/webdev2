@@ -21,11 +21,12 @@
 
     gtag('config', 'G-KT8L8YQBSZ');
   </script>
+
 </head> <!-- The end of the head section -->
 <body> <!-- The beginning of the body section -->
   <header>
     <div>
-      <img src="logo.png" alt="Logo Icon">
+      <img src="/webdev2/logo.png" alt="Logo Icon">
       <div class="lessons-dropdown">
         <a href="#" class="dropdown-trigger">lessons</a>
         <ul class="dropdown-menu">
@@ -213,7 +214,7 @@
                 <li>&nbsp;&nbsp;&lt;tr&gt;</li>
                 <li>&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Data 1&lt;&sol;td&gt;</li>
                 <li>&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Data 2&lt;&sol;td&gt;</li>
-                <li>&nbsp;&nbsp;&lt;&sol;tr&gt;</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Header 2&lt;&sol;th&gt;</li>
                 <li>&lt;&sol;table&gt;</li>
               </ul>
               <p>It displays on the page like this:</p>
@@ -370,7 +371,180 @@
     
     <section class="lessons" id="lesson-two">
       <h2>Lesson #2 Let's start making a page</h2>
-      <img src="/webdev2/images/under-construction.jpg" alt="under construction image">
+      <p>Before we dive into creating a simple web page, it's important to establish some prerequisites. Regardless of your current level of programming knowledge or the operating system you use, we'll ensure you have the necessary foundational skills. For those of you working on Windows or Linux systems, we'll address any subtle differences that may arise during the process.</p>
+      <p>Prerequisite #1: File System Navigation</p>
+      <p>To get started, you should be familiar with navigating your file system. If you need a refresher or want to learn the basics, here are some resources to help you:</p>
+      <a href="https://edu.gcfglobal.org/en/windowsbasics/working-with-files/1/">(For Windows)</a>
+      <a href="https://www.redhat.com/sysadmin/navigating-linux-filesystem">(for Linux)</a>
+      <a href="https://edu.gcfglobal.org/en/macosbasics/working-with-files/1/">(For MacOS)</a>
+      <p>Prerequisite #2: Familiarity with Text Editors</p>
+      <p>Before we dive deeper into web development, it's essential to be comfortable with using a simple text editor. Depending on your operating system, you'll have different options:</p>
+      <ul>
+        <li>**Windows:** Notepad is a basic and readily available text editor on Windows systems.</li>
+        <li>**Linux:** On Linux systems, you have text editors like Nano and Vim. Feel free to explore these if you're not already familiar with them.</li>
+      </ul>
+      <p>In Lesson #3 of this tutorial, we'll introduce you to "Visual Studio Code" (VSCode), a popular Integrated Development Environment (IDE). VSCode provides a more powerful and feature-rich environment for web development.</p>
+      <p>Now, let's get started with creating your very first web page. Many beginners start with a simple "Hello World" page. It may seem basic, but the main goal is to ensure you can write code that displays in a web browser. Since I primarily use Windows, the image examples in this tutorial will be shown using Notepad and the Microsoft Edge Browser in Private mode.</p>
+      <p>Let's start with the absolute basic HTML code you need to create your first web page. Regardless of your operating system, follow these steps:</p>
+      <ol>
+        <li>Open your file browser and navigate to your desktop (or any preferred location, such as your Documents folder).</li>
+        <li>Create a new folder and name it "Webdev."</li>
+        <li>Open your text editor.</li>
+        <li>Type the following HTML code:</li>
+      </ol>
+      <code>&lt;html&gt;</code>
+      <p>Press the <kbd><strong>ENTER</strong></kbd> (return) key to move to the next line and type:</p>
+      <code>&lt;/html&gt;</code>
+      <p>Your file should now look like this:</p>
+      <figure>
+        <img src="/webdev2/images/notepadScreenshot-helloWorld.jpg" alt="Screenshot of the windows notepad">
+        <figcaption>Your code should resemble this structure.</figcaption>
+      </figure>
+      <p>Don't worry about specific indentation for now; some text editors may provide automatic indentation, and that's perfectly fine. The key is to understand the basic structure of an HTML document.</p>
+      <ol start="7">
+        <li>Save the file as <strong>index.html</strong> into the folder you created. Make sure it has the extension '.html' and not '.txt'.</li>
+        <li>Now, locate the file using your file explorer. If you created the folder on your desktop, simply open that folder to find the file.</li>
+        <li>Right-click the file and select 'Open.' This action should open the file in your default web browser. If it doesn't, try right-clicking again and select 'Open with,' then choose your web browser.</li>
+      </ol>
+      <p>If everything was done correctly, you should see the text <strong>Hello World</strong> in the browser window. Additionally, you will notice the file location in the address bar at the top of the browser.</p>
+      <img src="/webdev2/images/browserScreenshot-helloWorld.jpg" alt="Screenshot of notepad with initial html code">
+      <p>For your convenience throughout the rest of this lesson, consider adding your web page to your browser's favorites or bookmarks. This way, you can easily return to the file even if you close the browser. For now, leave the browser open with your page.</p>
+      <p>To recap, here's what we've accomplished so far:</p>
+      <ol>
+        <li>We created a folder named "Webdev" to hold our web page.</li>
+        <li>We created the main or landing page called <strong>index.html</strong> and saved it in that folder.</li>
+        <li>We opened the page in a web browser, and it displayed the content.</li>
+      </ol>
+      <p>The file name <strong>index.html</strong> is the standard name for your home page on a website. It's widely recognized and automatically served as the default landing page by most web servers. This convention ensures that your website behaves as expected across different hosting environments.</p>
+      <p>For the rest of this lesson, we will build upon the foundations we've established in Lesson #1.</p>
+      <p>Now, go back to your text editor with your code open. We're going to enhance the structure of your HTML file.</p>
+      <ol>
+        <li>Above the first line <code>&lt;html&gt;</code>, add the following line: <code>&lt;!DOCTYPE html&gt;</code>. Make sure it is exactly the same.</li>
+        <li>Next, place your cursor between the '<code>l</code>' and the '<code>&gt;</code>' of the <code>&lt;html&gt;</code> element and modify it to look like this: <code>&lt;html lang=&quot;en&quot;&gt;</code>.</li>
+      </ol>
+      <p>Your <strong>index.html</strong> file should now look like this:</p>
+      <img src="/webdev2/images/notepadScreenshot-helloWorld-example-1.jpg" alt="Screenshot with additional html code, doctype declaration and html lang atrribute">
+      <p>By adding these lines, we are specifying the document type as HTML5 and setting the language of the document to English (en).</p>
+      <p>Now that we've updated our document structure, let's save the file and refresh or reopen your web browser if you left it open. If you closed it, open it again.</p>
+      <p>You should not see any visible changes in the browser; it should remain the same. This is expected.</p>
+      <p>Next, we will add some additional HTML structure to our page. Replace the words 'Hello World' with the following code, ensuring that you maintain proper indentation:</p>
+      <code>&lt;head&gt;</code>
+      <code>&lt;/head&gt;</code>
+      <p>Your text should now look like this:</p>
+      <img src="/webdev2/images/notepadScreenshot-helloWorld-example-2.jpg" alt="Screenshot with additional HTML code, head element tags">
+      <p>These lines represent the <code>&lt;head&gt;</code> section of your HTML document. The <code>&lt;head&gt;</code> section contains metadata and other important information about your web page, such as the document's title, character encoding, and more.</p>
+      <p>Now, let's further enhance the content in the <code>&lt;head&gt;</code> section of your HTML document.</p>
+      <p>Place your cursor at the end of the first <code>&lt;head&gt;</code> tag and press the <kbd><strong>ENTER</strong></kbd> key. Then, indent to match the 'head' tags and indent once more.</p>
+      <p>Now, type the following lines:</p>
+      <code>&lt;meta charset="UTF-8" /&gt; &lt;!-- This sets the character encoding for the text on the page --&gt;</code>
+      <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt; &lt;!-- This sets the initial size of the display --&gt;</code>
+      <p>These lines are important for specifying the character encoding of your web page and controlling the initial size of the display on various devices.</p>
+      <p>Now, it's a good time to mention that it's best to have 'word wrap' turned OFF in your text editor. With 'word wrap' turned on, the code may appear differently, as shown in example #2 below.</p>
+      <p>By turning 'word wrap' OFF, your code will look like example #1, which is more aligned and easier to work with.</p>
+      <figure>
+        <img src="/webdev2/images/notepadScreenshot-helloWorld-wordwrap-example-1.jpg" alt="Screenshot showing Notepad with word wrap OFF">
+        <figcaption>Example #1: Notepad with 'word wrap' OFF</figcaption>
+      </figure>
+      <figure>
+        <img src="/webdev2/images/notepadScreenshot-helloWorld-wordwrap-example-2.jpg" alt="Screenshot showing Notepad with word wrap ON">
+        <figcaption>Example #2: Notepad with 'word wrap' ON</figcaption>
+      </figure>
+      <p>If you refresh your web browser at this point, you should see just a blank screen. However, take a look at the browser tab; it currently shows the name of your HTML file.</p>
+      <p>Let's change that!</p>
+      <p>Place your cursor at the end of the line you just entered, press the <kbd><strong>ENTER</strong></kbd> key to move to the next line, and indent it to match the last two lines you entered. Now, add the following code:</p>
+      <code>&lt;title&gt;My Web Page&lt;/title&gt; &lt;!-- This is the "Site" Title. It is different than the "Page" title. This title shows up on the browser tab and as the suggested text when bookmarking a page --&gt;</code>
+      <p>Save the file and refresh your web browser. The browser tab should now display 'My Web Page' instead of the file name. If you've followed along so far and everything is looking as expected, great job!</p>
+      <p>Let's review what we have accomplished to this point.</p>
+      <ol>
+        <li>We created a folder to hold our web page project.</li>
+        <li>We created our <code>index.html</code> file.</li>
+        <li>We created our initial structure defining the Document type, an HTML section using the <code>&lt;html&gt;</code> element tags, and we created the head section using the <code>&lt;head&gt;</code> element tags.</li>
+        <li>Within the opening <code>&lt;html&gt;</code> element tag, we defined the language our document is in.</li>
+        <li>Within the <code>&lt;head&gt;</code> & <code>&lt;/head&gt;</code> section, we created two meta elements using the <code>&lt;meta&gt;</code> element tags to define the character encoding for the page and the initial size of the page when it loads, based on the device that the web browser is running on while viewing the page.</li>
+        <li>Also within the head section, we defined the title for our page to be seen on the browser tab.</li>
+        <li>Remember, other than the title (and a logo or icon that would also be displayed on the browser tab), nothing in the <code>&lt;head&gt;</code> section is included as "content" displayed in the browser window and seen by visitors to the page. It is strictly for the browser's use.</li>
+        <li>We have placed comments behind the contents of the meta and title tags to explain what they do. You will find as you continue with your web development journey, commenting standard code like these three tags is not really necessary. We have done it for two main reasons: First, just so you (as a new developer) will know their purpose. Second, to initiate the habit of commenting your code.</li>
+      </ol>
+      <p>If you are feeling that this seems like a lot of unnecessary typing, you will need to get used to it if you want to become a web developer. And even if you are only learning so you can create pages for yourself and don't expect anyone else to be viewing your code, you will be glad when one day you decide to make some changes in your code and realize that if you had not tossed in a few comments, you would be scratching your head trying to remember why you did something the way you did.</p>
+      <p>We will now add more elements for the page structure and then add some content that can be seen on the page. Starting with the <code>&lt;body&gt;</code> & <code>&lt;/body&gt;</code> element tags, add them directly below the closing <code>&lt;/head&gt;</code> element tag with the same indentation.</p>
+      <p> Within the <code>&lt;body&gt;</code> & <code>&lt;/body&gt;</code> element tags, we will start with creating a header. The body is where you will place all content you wish to be seen on the page. Do this by adding:</p>
+      <code>&lt;header&gt;</code>
+      <code>&lt;/header&gt;</code>
+      <p>Now between the two 'header' tags and with another indent, add the following code:</p>
+      <code>&lt;div&gt;</code>
+      <code>&lt;/div&gt;</code>
+      <p>And finally, add the following between the 'div' elements with yet another indent. (This will be the visible title at the top of your page in the header section:)</p>
+      <code>&lt;h1&gt;</code>My Web Page Journey<code>&lt;/h1&gt;</code>
+      <p>Your code should now look like this:</p>
+      <img src="/webdev2/images/notepadScreenshot-myWebPage-example-1.jpg" alt="Screenshot of html code with a header">
+      <p>If so, save the file and refresh your broswer. This is what you should now be seeing:</p>
+      <img src="/webdev2/images/browserScreenshot-myWebPage-example-2.jpg" alt="Screenshot of broswer showing header text">
+      <p>Moving on, We will now add a section to put more visible content into, utilizing a few more specific element tags.</p>
+      <p>First we will add a 'Title' for this section. Do this by moving your cursor to the end of the <code>&lt;&sol;header&gt;</code> tag and press <kbd><strong>ENTER</strong></kbd></p>
+      <p>Indent until you are even with that tag and add:</p>
+      <code>&lt;section&gt;</code>
+      <code>&lt;&sol;section&gt;</code>
+      <p>Move your cursor to the end of <code>&lt;section&gt;</code> and press <kbd><strong>ENTER</strong></kbd></p>
+      <p>Indent until you are between and even with those tags, and indent one more level in. Now add <code>&lt;h2&gt;</code><code>&lt;&sol;h2&gt;</code> Keep them side by side on the same line same as you did with the 'h1' tags, and at the end type &lt;&excl;&hyphen;&hyphen;This is the section heading&hyphen;&hyphen;&gt; and press <kbd><strong>ENTER</strong></kbd></p>
+      <p>Place your cursor between those two tags and add the text;   The Beginning</p>
+      <p>Move your cursor to the end of the closing <code>&lt;&sol;h2&gt;</code> tag and press <kbd><strong>ENTER</strong></kbd>.</p>
+      <p>Indent until you are below and even with the <code>&lt;h2&gt;</code> tag and add <code>&lt;p&gt;</code><code>&lt;&sol;p&gt;</code> Keeping them side by side on the same line. At the end, type &lt;&excl;&hyphen;&hyphen;The list topic&hyphen;&hyphen;&gt;</p>
+      <p>Place your cursor between those tags and add the following text; What I have learned so far in this lesson</p>
+      <p>Move your cursor to the end of that line behind the closing <code>&lt;&sol;p&gt;</code> Press <kbd><strong>ENTER</strong></kbd></p>
+      <p><em>Note: you can save the file and refresh the broswer after every step or any step to see changes on the page as you make them.</em></p>
+      <p>Indent to below and even with the opening <code>&lt;p&gt;</code> tag and add an 'un-ordered list' element:</p>
+      <code>&lt;ul&gt;</code>
+      <code>&lt;&sol;ul&gt;</code>
+      <p>Move the cursor at the end, behind the <code>&lt;ul&gt;</code> and type the following;</p>
+      <p>&lt;&excl;&hyphen;&hyphen;A list of some of the knowledge gained so far&hyphen;&hyphen;&gt;</p>
+      <p>Then press <kbd><strong>ENTER</strong></kbd></p>
+      <p>Now indent to between and even with those two tags and indent once more.</p>
+      <p>Add the following 'List item' element, side by side on the same line:</p>
+      <code>&lt;li&gt;</code><code>&lt;&sol;li&gt;</code>
+      <p>Place your cursor between those two tags and add the text; Using a text editor to start a web Page</p>
+      <p>Move the cursor to the end of the line, press <kbd><strong>ENTER</strong></kbd>, and repeat the last 2 steps. add another 'list item' element directly below the first with the same indentation. You will do this 4 more times for a total of 5 'List items'.</p>
+      <p>You can copy paste to end up with the following;</p>
+      <code>&lt;li&gt;</code>What I have learned so far in this lesson;<code>&lt;&sol;li&gt;</code>
+      <code>&lt;li&gt;</code><code>&lt;&sol;li&gt;</code>
+      <code>&lt;li&gt;</code><code>&lt;&sol;li&gt;</code>
+      <code>&lt;li&gt;</code><code>&lt;&sol;li&gt;</code>
+      <code>&lt;li&gt;</code><code>&lt;&sol;li&gt;</code>
+      <p>Now place the following lines of text into the rest of the 'list element' tags, one line for each tag;</p>
+      <p>Viewing the file locally with a web browser</p>
+      <p>How commenting looks in the code </p>
+      <p>The visual difference between text enclosed in h1 and h2 element tags</p>
+      <p>How to create an un-ordered list</p>
+      <p>Now, if you havent done so already, Save the file and refresh your browser.</p>
+      Your code should be looking like this:
+      <img src="/webdev2/images/notepadScreenshot-myWebPage-example-2.jpg" alt="Screenshot of more html code">
+      <p>And your Web page should be looking like this:</p>
+      <img src="/webdev2/images/browserScreenshot-myWebPage-example-3.jpg" alt="Screenshot of a browser displaying the code shown in last image">
+      <p>If everything is looking go so far, then we are making progress and the page is shaping up.</p>
+      <p>Excellent Job!!!</p>
+      <p>We will now create an 'ordered list', to list the things you will learn as you continue with this lesson.</p>
+      <p>You need to repeat the process we just did for the un-ordered list.</p>
+      <p>First, add a paragraph element lined up with the closing 'ul' element tag. make it just like this;</p>
+      <code>&lt;p&gt;</code>What I am about to Learn;<code>&lt;&sol;p&gt;</code> Lined up with the closing 'ul'tag, keeping them side by side on the same line. At the end, type &lt;&excl;&hyphen;&hyphen;The list topic&hyphen;&hyphen;&gt;
+      <p>Now add the;</p>
+      <code>&lt;ol&gt;</code>
+      <code>&lt;&sol;ol&gt;</code>
+      <p>Align them with the previous 'ul' element tags. Between them with the same indentation as the previous 'li' elements place 5 more:</p>
+      <code>&lt;li&gt;</code><code>&lt;&sol;li&gt;</code>
+      <code>&lt;li&gt;</code><code>&lt;&sol;li&gt;</code>
+      <code>&lt;li&gt;</code><code>&lt;&sol;li&gt;</code>
+      <code>&lt;li&gt;</code><code>&lt;&sol;li&gt;</code>
+      <code>&lt;li&gt;</code><code>&lt;&sol;li&gt;</code>
+      <p>Feel free to copy paste your previous list and edit the 'ol' for 'ul' and replace the text in each of the 'li' elements with the following:</p>
+      <p>Create an ordered list (this list)</p>
+      <p>Create a Footer section</p>
+      <p>How to add a 'class' to an element</p>
+      <p>How to add an 'id' to an element</p>
+      <p>How to add styling to a page</p>
+      <p>Your code should now look like this;</p>
+      <img src="/webdev2/images/notepadScreenshot-myWebPage-example-3.jpg" alt="Screenshot of more html code">
+      <p>Save and refresh the browser and hopefully you are now looking at this;</p>
+      <img src="/webdev2/images/browserScreenshot-myWebPage-example-4.jpg" alt="Screenshot of browser displaying the html code from previous screenshot">
+      
     </section>
     <section class="lessons" id="lesson-three">
       <h2>Lesson #3 Coming Soon!!!</h2>
